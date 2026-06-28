@@ -1,0 +1,17 @@
+[package]
+name = "yato-ae-gradient"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "After Effects gradient effect — drag on the comp to draw a gradient line"
+
+[lib]
+crate-type = ["cdylib"]
+
+# 参照 crate は workspace（virtualritz/after-effects）の member。
+# master が動くので HEAD を rev 固定し、移植元 example と API を一致させる。
+[dependencies]
+after-effects = { git = "https://github.com/virtualritz/after-effects", rev = "ffdff3364133413c6290a7b0d917965e9968e801" }
+
+[build-dependencies]
+pipl = { git = "https://github.com/virtualritz/after-effects", rev = "ffdff3364133413c6290a7b0d917965e9968e801" }
